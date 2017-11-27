@@ -87,7 +87,7 @@ var loggers = {};
 
 exports.named = function(flowname) {
   if (! loggers[flowname]) {
-    loggers[flowname] = objectLogger(new files.DatedFileStream('logs/'+flowname+'-%y-%m-%d.log'));
+    loggers[flowname] = objectLogger(new DatedFileStream('logs/'+flowname+'-%y-%m-%d.log'));
   }
   return { save: loggers[flowname] };
 }
