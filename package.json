@@ -1,0 +1,23 @@
+{
+  "name": "json-logger",
+  "version": "1.0.0",
+  "description": "Log objects as JSON to a time-rotated log file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zamfi/json-logger.git"
+  },
+  "keywords": [
+    "json",
+    "logger"
+  ],
+  "author": "J.D. Zamfirescu <zamfire@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zamfi/json-logger/issues"
+  },
+  "homepage": "https://github.com/zamfi/json-logger#readme"
+}
