@@ -73,7 +73,7 @@ exports.readDateFile = function(path, d) {
   return fs.createReadStream(getLogPath(path, getDate(d)), { encoding: 'utf8' });
 }
 
-exports.objectLogger = function(stream) {
+exports.objectLogger = function objectLogger(stream) {
   return function(obj, encoding) {
     if (! obj.date) {
       obj.date = new Date();
@@ -84,9 +84,9 @@ exports.objectLogger = function(stream) {
 
 var loggers = {};
 
-exports.loggerNamed = function(flowname) {
+exports.named = function(flowname) {
   if (! loggers[flowname]) {
-    loggers[flowname] = files.objectLogger(new files.DatedFileStream('logs/'+flowname+'-%y-%m-%d.log'));
+    loggers[flowname] = objectLogger(new files.DatedFileStream('logs/'+flowname+'-%y-%m-%d.log'));
   }
   return { save: loggers[flowname] };
 }
