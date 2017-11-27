@@ -73,7 +73,7 @@ exports.readDateFile = function(path, d) {
   return fs.createReadStream(getLogPath(path, getDate(d)), { encoding: 'utf8' });
 }
 
-exports.objectLogger = function objectLogger(stream) {
+function objectLogger(stream) {
   return function(obj, encoding) {
     if (! obj.date) {
       obj.date = new Date();
@@ -81,6 +81,7 @@ exports.objectLogger = function objectLogger(stream) {
     stream.write(JSON.stringify(obj)+'\n', encoding);
   }
 }
+exports.objectLogger = objectLogger;
 
 var loggers = {};
 
